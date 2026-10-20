@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { basename, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 export function formatJson(contents) {
@@ -40,6 +40,12 @@ async function main() {
 	);
 
 	for (const filepath of new Set(paths.split("\0").filter(Boolean))) {
+		if (
+			["package-lock.json", "npm-shrinkwrap.json"].includes(basename(filepath))
+		) {
+			continue;
+		}
+
 		try {
 			const original = await readFile(filepath, "utf8");
 			const formatted = formatJson(original);
