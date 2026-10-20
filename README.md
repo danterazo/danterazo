@@ -1,5 +1,6 @@
 # GitHub Activity
 
+<!-- markdownlint-disable MD013 -->
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
@@ -11,7 +12,9 @@
     width="495"
   />
 </picture>
+<!-- markdownlint-enable MD013 -->
 
+<!-- markdownlint-disable MD013 -->
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
@@ -23,7 +26,9 @@
     width="495"
   />
 </picture>
+<!-- markdownlint-enable MD013 -->
 
+<!-- markdownlint-disable MD013 -->
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
@@ -35,7 +40,9 @@
     width="495"
   />
 </picture>
+<!-- markdownlint-enable MD013 -->
 
+<!-- markdownlint-disable MD013 -->
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
@@ -47,3 +54,4 @@
     width="495"
   />
 </picture>
+<!-- markdownlint-enable MD013 -->
