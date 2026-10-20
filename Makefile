@@ -4,8 +4,8 @@ fix: format
 
 format:
 	node scripts/format-readme.mjs
-	./node_modules/.bin/prettier --write '**/*.json'
+	node scripts/format-json.mjs
 
 check:
 	node scripts/format-readme.mjs --check
-	./node_modules/.bin/prettier --check '**/*.json'
+	node scripts/format-json.mjs --check
