@@ -1,6 +1,9 @@
-.PHONY: fix format check
+.PHONY: deps fix format check
 
 fix: format
+
+deps:
+	npm ci --include=dev
 
 format:
 	node scripts/format-readme.mjs
