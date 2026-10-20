@@ -24,11 +24,31 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
 
+      - name: Generate light rolling activity
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
+        with:
+          card: stats
+          options: username=danterazo&theme=default&title_color=187466&icon_color=187466&hide_rank=true&show_icons=true&include_all_commits=false&hide=stars,prs,issues&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Activity%20%28Last%2012%20Months%29
+          path: profile/rolling-light.svg
+          core_version: "2.2.1"
+          fail_on_error: "true"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate dark rolling activity
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
+        with:
+          card: stats
+          options: username=danterazo&theme=github_dark&title_color=70d9bd&icon_color=70d9bd&hide_rank=true&show_icons=true&include_all_commits=false&hide=stars,prs,issues&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Activity%20%28Last%2012%20Months%29
+          path: profile/rolling-dark.svg
+          core_version: "2.2.1"
+          fail_on_error: "true"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate light overview
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
         with:
           card: stats
-          options: username=danterazo&theme=default&title_color=187466&icon_color=187466&hide_rank=true&show_icons=true&include_all_commits=true&show=contributions&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Overview
+          options: username=danterazo&theme=default&title_color=187466&icon_color=187466&hide_rank=true&show_icons=true&include_all_commits=true&hide=contribs&show=contributions&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Overview%20%28All%20Time%29
           path: profile/stats-light.svg
           core_version: "2.2.1"
           fail_on_error: "true"
@@ -38,7 +58,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
         with:
           card: stats
-          options: username=danterazo&theme=github_dark&title_color=70d9bd&icon_color=70d9bd&hide_rank=true&show_icons=true&include_all_commits=true&show=contributions&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Overview
+          options: username=danterazo&theme=github_dark&title_color=70d9bd&icon_color=70d9bd&hide_rank=true&show_icons=true&include_all_commits=true&hide=contribs&show=contributions&number_format=long&disable_animations=true&card_width=495&custom_title=GitHub%20Overview%20%28All%20Time%29
           path: profile/stats-dark.svg
           core_version: "2.2.1"
           fail_on_error: "true"
