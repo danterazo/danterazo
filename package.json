@@ -1,8 +1,8 @@
 {
 	"devDependencies": {
-		"prettier": "3.8.3",
-		"remark-parse": "^11.0.0",
-		"unified": "^11.0.5"
+		"prettier": "*",
+		"remark-parse": "*",
+		"unified": "*"
 	},
 	"name": "danterazo-profile",
 	"prettier": {
