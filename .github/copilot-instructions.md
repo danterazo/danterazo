@@ -1,5 +1,14 @@
 # README Statistics
 
+- Before any assistant-made commit in this repository, run `git pull --ff-only`
+  on the current branch to incorporate its configured upstream. Then inspect
+  the worktree and staged diff again, stage only task-related files, make the
+  commit, and push to the configured upstream.
+- If the pull cannot fast-forward, has no configured upstream, or would
+  overwrite local work, stop and preserve all changes. Inspect and reconcile
+  deliberately before committing; do not reset, force-push, or silently create
+  a merge commit. If the push is rejected because upstream advanced, pull and
+  recheck before retrying.
 - Keep rolling activity first, all-time statistics second, and the language
   breakdown last. Label time windows accurately; do not present calendar-year or
   lifetime totals as rolling statistics.
