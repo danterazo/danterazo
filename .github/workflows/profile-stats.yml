@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - .github/workflows/profile-stats.yml
+      - scripts/recent-activity.mjs
 
 permissions:
   contents: read
@@ -23,6 +24,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+
+      - name: Generate weekly and monthly activity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USERNAME: ${{ github.repository_owner }}
+        run: node scripts/recent-activity.mjs
 
       - name: Generate light rolling activity
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
