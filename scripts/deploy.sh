@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# dispatch the workflow and capture the exact run id.
+# dispatch the workflow and capture the exact run ID.
 run_id=$(gh api --method POST repos/danterazo/danterazo/actions/workflows/profile-stats.yml/dispatches \
 	-f ref=main -F return_run_details=true --jq '.workflow_run_id') || exit "$?"
 
-# do not watch or redispatch if github returned an unexpected response.
+# don't watch or redispatch if GitHub returned an unexpected response.
 case "$run_id" in
 	''|*[!0-9]*)
 		printf 'Dispatch returned no run ID; check GitHub Actions before retrying.\n' >&2
