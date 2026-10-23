@@ -1,9 +1,10 @@
 .PHONY: deps fix format check deploy refresh
 
+# aliases
 fix: format
-
 refresh: deploy
 
+# commands
 deploy:
 	@run_id=$$(gh api --method POST repos/danterazo/danterazo/actions/workflows/profile-stats.yml/dispatches \
 		-f ref=main -F return_run_details=true --jq '.workflow_run_id') || exit $$?; \
