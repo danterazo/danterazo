@@ -1,6 +1,9 @@
-.PHONY: deps fix format check
+.PHONY: deps fix format check refresh
 
 fix: format
+
+refresh:
+	gh workflow run profile-stats.yml --repo danterazo/danterazo
 
 deps:
 	npm ci --include=dev
